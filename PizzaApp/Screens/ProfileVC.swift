@@ -12,7 +12,7 @@ class ProfileVC: UIViewController {
     var pizzacategory = true
     
     var saleItemsData: [SaleModel] = []
-    var menuDetailsData: [String] = ["1","1","1","1","1","1"]
+    var menuDetailsData: [String] = ["2","2","2","2","2","2"]
     var receviedMenuItemsData: [MenuDetailsModel]   = []
     
     
