@@ -8,12 +8,20 @@
 import Foundation
 
 
-struct PizzaModel {
+struct PizzaModel: Codable {
     let pizzaName: String
     let image: String
     let pizzaDescription: String
     let piizzaPrice: String
 }
+
+//struct PizzaModel2: Codable {
+//    let title: String
+//    let image: String
+//    let pizzaDescription: String
+//    let size: [String]
+//    let price: [Int]
+//}
 
 struct SaleModel {
     let image: String
@@ -59,3 +67,13 @@ let pizzaData: [PizzaModel] = [
     PizzaModel(pizzaName: "Мясная 🌶️", image: "myasnaya", pizzaDescription: "Сыр моцарелла, томатный соус, цыпленок, пикантная пепперони из цыпленка, ветчина из цыпленка, острая чоризо из цыпленка", piizzaPrice: "от 499 р"),
 
 ]
+
+
+struct PizzaModel2: Codable {
+    let id: Int
+    let title: String
+    let image: String
+    let pizzaDescription: String
+    let size: [String]
+    let price: [Int]
+}

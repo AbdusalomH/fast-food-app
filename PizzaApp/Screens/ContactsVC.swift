@@ -1,5 +1,5 @@
 //
-//  ProfileVC.swift
+//  ContactsVC.swift
 //  PizzaApp
 //
 //  Created by Mac on 7/3/23.
@@ -7,13 +7,12 @@
 
 import UIKit
 
-class ProfileVC: UIViewController {
+class ContactsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .green
-        
+        view.backgroundColor = .red
     }
     
 
