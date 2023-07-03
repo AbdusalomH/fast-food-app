@@ -12,5 +12,5 @@ It's a pet project for fast-food restraunts. Implement main page, with navigatio
 
 | App navigation        |
 |-----------------------|
-| ![](filename)     |
+| ![](fastfoodApp.gif)  |
 
