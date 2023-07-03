@@ -5,9 +5,9 @@ It's a pet project for fast-food restraunts. Implement main page, with navigatio
 1. 100% Programatically
 2. UIKit
 3. URLSession
-4. AutoLayout,
+4. AutoLayout
 5. SDWebImage
-6. MVC,
+6. MVC
 7. Swift package manage (no CocoaPods)
 
 | App navigation        |
