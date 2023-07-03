@@ -15,7 +15,7 @@ class MainTabbarVC: UITabBarController {
         UITabBar.appearance().tintColor         = #colorLiteral(red: 0.9912737012, green: 0.1047256812, blue: 0.3643145561, alpha: 1)
         //UINavigationBar.appearance().tintColor  = .systemGreen
         tabBar.backgroundColor = .white
-        viewControllers                         = [profileVC(), contactsVC(), mainVC(), basketVC()]
+        viewControllers                         = [mainVC(), contactsVC(), mainVC(), basketVC()]
 
     }
     
