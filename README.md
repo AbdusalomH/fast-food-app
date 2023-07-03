@@ -1,6 +1,6 @@
 ** Fast Food App **
 
-It's a pet project for fast-food restraunts. Implement main page, with navigation between cells and menu.
+It's a pet project for fast-food restaurants. Implement main page, with navigation between cells and menu.
 
 1. 100% Programatically
 2. UIKit
