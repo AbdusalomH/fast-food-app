@@ -113,9 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				04B506CF2A529FFA000C39B6 /* App */,
+				045FB8D62A46EE2B003BDF2E /* Screens */,
 				0448E5142A4D48FB00C3EB20 /* NetworkManager */,
 				045FB8D72A46EE4E003BDF2E /* Models */,
-				045FB8D62A46EE2B003BDF2E /* Screens */,
 				047D15542A44793700AF4FFF /* Assets.xcassets */,
 				047D15562A44793700AF4FFF /* LaunchScreen.storyboard */,
 				047D15592A44793700AF4FFF /* Info.plist */,
