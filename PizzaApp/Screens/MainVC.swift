@@ -99,7 +99,7 @@ final class MainVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        //navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     func setupView() {
@@ -175,7 +175,7 @@ final class MainVC: UIViewController {
     func menuDetailsFlowlayout() -> UICollectionViewFlowLayout {
         
         let flowLayout                   = UICollectionViewFlowLayout()
-        flowLayout.sectionInset          = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        flowLayout.sectionInset          = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         flowLayout.itemSize              = CGSize(width: view.bounds.width, height: view.frame.height - 150)
         flowLayout.scrollDirection       = .horizontal
         flowLayout.minimumLineSpacing    = 0
@@ -243,6 +243,7 @@ extension MainVC: UICollectionViewDataSource, UICollectionViewDelegate {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuItemsCell.indentifier, for: indexPath) as! MenuItemsCell
             cell.getTitles(name: celldata[indexPath.row])
             if firstlaunch, celldata.first == "Пицца" {
+                self.title = "Пицца"
                 let index = IndexPath(row: 0, section: 0)
                 menuItemsCollection.selectItem(at: index, animated: true, scrollPosition: .top)
                 firstlaunch = false
@@ -294,7 +295,7 @@ extension MainVC: MenuDetailsCellDelegate {
          menuDetailsCollectionTopConstraints.constant = 180
          collecionCellHeght = 250
          UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
-             self.saleItemsCollection.isHidden = false
+             self.saleItemsCollection.alpha = 1
              self.view.layoutIfNeeded()
          }) { done in
              if done {
@@ -309,9 +310,8 @@ extension MainVC: MenuDetailsCellDelegate {
         // Update the constraints and hide/show the top collection view
         menuItemsCollectionTopConstraints.constant = 0
         menuDetailsCollectionTopConstraints.constant = 45
-        collecionCellHeght = 0
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
-            self.saleItemsCollection.isHidden = true
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
+            self.saleItemsCollection.alpha = 0
             self.view.layoutIfNeeded()
         }) { done in
             if done {
