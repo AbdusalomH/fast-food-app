@@ -152,6 +152,15 @@ class DestailCollectionCell: UICollectionViewCell {
         return label
     }()
     
+    lazy var lineLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.layer.borderWidth = 1
+        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        label.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        return label
+    }()
+    
     
     
     override init(frame: CGRect) {
@@ -168,6 +177,7 @@ class DestailCollectionCell: UICollectionViewCell {
         contentView.addSubview(pizzaTitle)
         contentView.addSubview(pizzaDescripLabel)
         contentView.addSubview(pizzaPriceLabel)
+        contentView.addSubview(lineLabel)
 
         NSLayoutConstraint.activate([
             
@@ -189,7 +199,12 @@ class DestailCollectionCell: UICollectionViewCell {
             pizzaDescripLabel.leadingAnchor.constraint(equalTo: pizzaTitle.leadingAnchor),
             pizzaDescripLabel.topAnchor.constraint(equalTo: pizzaTitle.bottomAnchor, constant: 12),
             pizzaDescripLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            pizzaDescripLabel.bottomAnchor.constraint(equalTo: pizzaPriceLabel.topAnchor, constant: -12)
+            pizzaDescripLabel.bottomAnchor.constraint(equalTo: pizzaPriceLabel.topAnchor, constant: -12),
+            
+            lineLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            lineLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            lineLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            lineLabel.heightAnchor.constraint(equalToConstant: 2)
         ])
 
     }
@@ -208,12 +223,10 @@ extension MenuDetailsBaseCell {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        if scrollView.contentOffset.y > 50 {
+        if scrollView.contentOffset.y > 100 {
             delegate?.didScrollDown(in: self)
-        } else if scrollView.contentOffset.y < 0 {
+        } else if scrollView.contentOffset.y < -80 {
             delegate?.didScrollUp(in: self)
         }
     }
-    
-
 }
