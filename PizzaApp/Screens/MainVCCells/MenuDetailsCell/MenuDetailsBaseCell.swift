@@ -21,13 +21,15 @@ class MenuDetailsBaseCell: UICollectionViewCell, UICollectionViewDelegate, UICol
     
 
     weak var delegate: MenuDetailsCellDelegate?
-        
-
+    
+    
+    let acttivityIndicator = UIActivityIndicatorView(style: .medium)
+     
+    
     static let identifier = "menuDetailsCell"
     
     
     var menuDetails: [PizzaModel2] = []
-    
     
     
     lazy var detailsCollection: UICollectionView = {
@@ -77,12 +79,20 @@ class MenuDetailsBaseCell: UICollectionViewCell, UICollectionViewDelegate, UICol
     
     func setupView() {
         contentView.addSubview(detailsCollection)
+        contentView.addSubview(acttivityIndicator)
+        acttivityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            
             detailsCollection.topAnchor.constraint(equalTo: contentView.topAnchor),
             detailsCollection.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             detailsCollection.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            detailsCollection.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            detailsCollection.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            
+            acttivityIndicator.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            acttivityIndicator.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -100),
+            acttivityIndicator.heightAnchor.constraint(equalToConstant: 100),
+            acttivityIndicator.widthAnchor.constraint(equalToConstant: 100)
         ])
     }
     
