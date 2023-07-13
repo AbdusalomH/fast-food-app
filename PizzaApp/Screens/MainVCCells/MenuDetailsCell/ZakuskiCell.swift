@@ -13,6 +13,7 @@ class ZakuskiCell: MenuDetailsBaseCell {
     
     
     override func getMenuData() {
+        acttivityIndicator.startAnimating()
         NetworkManager.shared.requestDataFromServerCombo(name: "zakuski") { result in
             switch result {
                 
@@ -20,6 +21,7 @@ class ZakuskiCell: MenuDetailsBaseCell {
                 DispatchQueue.main.async {
                     self.menuDetails = data
                     self.detailsCollection.reloadData()
+                    self.acttivityIndicator.stopAnimating()
                 }
                 
             case .failure(let error):

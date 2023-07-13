@@ -13,12 +13,14 @@ class PizzaCell: MenuDetailsBaseCell {
     
     
     override func getMenuData() {
+        acttivityIndicator.startAnimating()
         NetworkManager.shared.requestDataFromServer(name: "") { result in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
                     self.menuDetails = data
                     self.detailsCollection.reloadData()
+                    self.acttivityIndicator.stopAnimating()
                 }
                 
             case .failure(let error):
